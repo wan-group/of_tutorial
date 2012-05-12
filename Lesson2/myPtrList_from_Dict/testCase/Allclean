@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cp constant/polyMesh/blockMeshDict constant/
+
+rm constant/polyMesh/* -r
+
+cp constant/blockMeshDict constant/polyMesh/
+
+

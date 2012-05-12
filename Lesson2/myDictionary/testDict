@@ -1,0 +1,9 @@
+name	"shen";
+score	80;
+direction   (90 30 60);
+
+yang
+{
+	name  "yang";
+	ID	  1111;
+}
