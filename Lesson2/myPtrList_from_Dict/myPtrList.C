@@ -1,7 +1,6 @@
 #include "fvCFD.H"
 #include "myLib.H"
 #include "PtrList.H"
-#include "fvCFD.H"
 #include "IOdictionary.H"
 
 int main(int argc, char* argv[])
