@@ -87,7 +87,10 @@ public:
 		/* -------------------------------------------------*/
 		autoPtr<myLib> operator()(Istream& is) const
 		{
-			word member(is);
+            word member(is); // it's necessary. read the name before the dict.
+                             // e.g shen {...}  
+                             // 'shen' will be input to member 
+                             // so that the contents in { } will be read by dict next
 			dictionary dict(is);
 			return autoPtr<myLib>(new myLib(dict));
 		}

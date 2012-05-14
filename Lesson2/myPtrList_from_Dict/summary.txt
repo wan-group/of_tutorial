@@ -1,0 +1,50 @@
+总结：
+
+1. 在类中定义iNew class，有iNew(params) 够在函数， 和 autoPtr<T> operator()(Istream& is) const 成员函数，返回autoPtr<T>
+
+e.g 
+    autoPtr<myLib> operator()(Istream& is)   const
+    {
+        word member(is);
+        dictionary dict(is);
+        return autoPtr<myLib>(new myLib(dict));
+    }
+
+
+    
+
+2. 在类中定义autoPtr<T> clone() const 成员函数，返回autoPtr<T>，如果没有作用，可以采用noImplemented
+
+    notImplemented("autoPtr<myLib> myLib::clone() const");
+
+    return autoPtr<myLib>(NULL)
+
+3. 定义带dict的构造函数，
+
+e.g 
+
+myLib::myLib(word name, label ID, word email)
+:
+    name_(name),
+    ID_(ID),
+    email_(email)  
+
+{} 
+
+4. 在主程序中使用：
+
+PtrList<T> ptl
+(
+     Istream,
+     T::iNew(param)
+)
+
+e.g  
+PtrList<myLib> ptl3
+(
+    dict.lookup("group"), // return istream
+    myLib::iNew()         // constructor of myLib::iNew 
+);
+
+
+

@@ -27,10 +27,11 @@ int main(int argc, char* argv[])
 		)
 	);
 
+    // create list from dict
 	PtrList<myLib> ptl3
 	(
-		dict.lookup("group"),
-		myLib::iNew()
+		dict.lookup("group"), // return istream
+		myLib::iNew()         // constructor of myLib::iNew 
 	);
 
 	Info << ptl3 << endl;
