@@ -9,7 +9,10 @@ int main()
 {
 	fileName file="testDict";
 	IFstream infile(file);
+
+    // Construct by IFstream
 	dictionary dict(infile);
+
 	// output table of contents
 	Info << dict.toc() << endl;
 
@@ -21,8 +24,11 @@ int main()
 
 	// read vector
 	vector direction = dict.lookup("direction");
+    
+    // test regular expression
+    scalar something = readScalar(dict.lookup("something"));
 
-	Info << "name: " << name << tab << "score:" << score << tab << "direction: " << direction<< endl;
+	Info << "name: " << name << tab << "score:" << score << tab << "direction: " << direction << tab << "something: " << something << endl;
 
 
 	// test subdict

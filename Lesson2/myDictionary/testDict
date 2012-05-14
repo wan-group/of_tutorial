@@ -7,3 +7,6 @@ yang
 	name  "yang";
 	ID	  1111;
 }
+
+"some.*"    90;   // regular expression
+
