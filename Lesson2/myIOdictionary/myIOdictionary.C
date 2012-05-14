@@ -1,3 +1,11 @@
+/**
+ * @file myIOdictionary.C
+ * @Description: test class IOdictionary
+ * @author Zhirong Shen <zrshen.sjtu@gmail.com>
+ * @version 0.10
+ * @date 2012-05-14
+ */
+
 #include "dictionary.H"
 #include "IFstream.H"
 #include "IOstreams.H"
@@ -12,21 +20,22 @@ using namespace Foam;
 
 int main(int argc, char* argv[])  // argc and argv are needed by setRootCase.H
 {
-	void testRegistry(const fvMesh& mesh);
+	void testRegistry(const fvMesh& mesh);  // function declaration
+
 	#include "setRootCase.H" // create args defined by createTime
-	#include "createTime.H"
-	#include "createMesh.H"
+	#include "createTime.H"  // required by createMesh.H
+	#include "createMesh.H"  // to initialize mesh (class fvMesh)
 
 	IOdictionary dict
 	(
 		IOobject
 		(
 			"testDict",  // name
-			runTime.constant(),  // path (in constant/)
-			mesh,  // register --> fvMesh
+			runTime.constant(),  // path (constant/)
+			mesh,  // register --> class fvMesh
 			IOobject::MUST_READ,   // read option
 			IOobject::NO_WRITE,    // write option
-			true                   // register or not
+			true                   // register or not  (default is true)
 		)
 	);
 
@@ -42,7 +51,11 @@ int main(int argc, char* argv[])  // argc and argv are needed by setRootCase.H
 	// read vector
 	vector direction = dict.lookup("direction");
 
-	Info << "name: " << name << tab << "score:" << score << tab << "direction: " << direction<< endl;
+
+    // regular expression
+    scalar something = readScalar(dict.lookup("somethign"));
+
+	Info << "name: " << name << tab << "score:" << score << tab << "direction: " << direction<< tab << "something: " << something <<endl;
 
 
 	// test subdict
@@ -61,14 +74,23 @@ int main(int argc, char* argv[])  // argc and argv are needed by setRootCase.H
 	return 0;
 }
 
+/* --------------------------------------------------------------------------*/
+/**
+ * @Description: Try to use registry to find loookupObject
+ *
+ * @Param fvMesh& mesh, the registry
+ */
+/* ----------------------------------------------------------------------------*/
 void testRegistry(const fvMesh& mesh)
 {
 
 	Info << nl << "test registry lookup" << endl;
 
-	IOdictionary dictNew = mesh.lookupObject<IOdictionary>("testDict");
+	const IOdictionary& refDict = mesh.lookupObject<IOdictionary>("testDict");  //find testDict and return reference of testdict "must be const reference"
+    IOdictionary newDict = mesh.lookupObject<IOdictionary>("testDict"); // find testDict and create a copy 
 
-	Info << dictNew << endl;
+	Info << "refDict:" << nl << refDict << endl
+       << "newDict:" << nl << newDict << endl;
 
 }
 

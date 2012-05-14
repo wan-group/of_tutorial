@@ -13,6 +13,7 @@ FoamFile
 name	"shen";
 score	80;
 direction   (90 30 60);
+"some.*"    90;
 
 yang
 {
