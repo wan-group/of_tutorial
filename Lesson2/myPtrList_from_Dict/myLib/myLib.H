@@ -15,6 +15,7 @@ class myLib
 private:
     word name_;  // string
     label ID_;   // int
+    word fullName_;
 	word email_;
 
 public:
@@ -22,10 +23,10 @@ public:
     //  Constructor
     myLib();
     
-    myLib(word name, label ID, word email="none");
+    myLib(word name, label ID, word fullName = "none", word email="none");
 
 	// construct from dictionary
-	myLib(dictionary dict);
+	myLib(word name, dictionary dict);
 
     ~myLib();
 
@@ -45,6 +46,11 @@ public:
 		return email_;
 	}
 
+    const word& fullName() const
+    {
+        return fullName_;
+    }
+
     void setName(word name)
 	{
 		name_ = name;
@@ -54,6 +60,11 @@ public:
 	{
 		ID_ = ID;
 	}
+
+    void setFullName(word fullName)
+    {
+        fullName_ = fullName;
+    }
 
 	void setEmail(word email)
 	{
@@ -87,12 +98,12 @@ public:
 		/* -------------------------------------------------*/
 		autoPtr<myLib> operator()(Istream& is) const
 		{
-            word member(is); // it's necessary. read the name before the dict.
+            word name(is); // it's necessary. read the name before the dict.
                              // e.g shen {...}  
-                             // 'shen' will be input to member 
+                             // 'shen' will be input to 'name'
                              // so that the contents in { } will be read by dict next
 			dictionary dict(is);
-			return autoPtr<myLib>(new myLib(dict));
+			return autoPtr<myLib>(new myLib(name, dict));
 		}
 	};
 

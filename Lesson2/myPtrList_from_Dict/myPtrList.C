@@ -14,6 +14,8 @@ int main(int argc, char* argv[])
 	#include "createTime.H"
 	#include "createMesh.H"
 
+    // create IOdictionary dict
+    Info << "Create dict" << endl;
 	IOdictionary dict
 	(
 		IOobject
@@ -49,6 +51,23 @@ int main(int argc, char* argv[])
 	{
 		Info << ptl3[i].ID() << endl;
 	}
+
+    Info << nl << "Display member full name: " << endl;
+
+	forAll(ptl3, i)
+	{
+		Info << ptl3[i].fullName() << endl;
+	}
+
+    Info << nl << "Display member email: " << endl;
+
+	forAll(ptl3, i)
+	{
+		Info << ptl3[i].email() << endl;
+	}
+
+    Info << nl << "Program ends" << nl << endl;
+
 
     return 0;
 }

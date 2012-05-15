@@ -13,30 +13,30 @@ group
 (
 	shen
 	{
-		name	"Zhirong_Shen";
-		email	"zrshen.sjtu@gmail.com";
-		ID  	111;
+		fullName	"Zhirong_Shen";
+		email	    "zrshen.sjtu@gmail.com";
+		ID  	    111;
 	}
 
 	liu
 	{
-		name	"Yuanchuan_Liu";
-		email	"liuyuanchuan456@163.com";
-		ID		121;
+		fullName	"Yuanchuan_Liu";
+		email	    "liuyuanchuan456@163.com";
+		ID		    121;
 	}
 
 	ye 
 	{
-		name	"Haixuan_Ye";
-		email	"yehaixuan4428@163.com";
-		ID		131;
+		fullName	"Haixuan_Ye";
+		email	    "yehaixuan4428@163.com";
+		ID		    131;
 	}
 
 	yang
 	{
-		name	"Yongqian_Yang";
-		email	"yongqian727@gmail.com";
-		ID		141;
+		fullName	"Yongqian_Yang";
+		email	    "yongqian727@gmail.com";
+		ID		    141;
 	}
 
 );
