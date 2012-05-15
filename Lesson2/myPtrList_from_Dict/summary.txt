@@ -1,6 +1,6 @@
 总结：
 
-1. 在类中定义iNew class，有iNew(params) 够在函数， 和 autoPtr<T> operator()(Istream& is) const 成员函数，返回autoPtr<T>
+1. 在类中定义iNew class，有iNew(params) 构造函数， 和 autoPtr<T> operator()(Istream& is) const 成员函数，返回autoPtr<T>
 
 e.g 
     autoPtr<myLib> operator()(Istream& is)   const

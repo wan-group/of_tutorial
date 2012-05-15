@@ -16,7 +16,7 @@ myLib::myLib(word name, label ID)
    ID_(ID)
 {} 
 
-myLib::myLib(word member, dictionary dict)
+myLib::myLib(dictionary dict)
 :
 	name_(dict.lookup("name")),
 	ID_(readScalar(dict.lookup("ID")))

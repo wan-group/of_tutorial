@@ -23,7 +23,7 @@ public:
     
     myLib(word name, label ID);
 
-	myLib(word member, dictionary dict);
+	myLib(dictionary dict);
 
     ~myLib();
 
