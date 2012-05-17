@@ -1,0 +1,42 @@
+// the header is required
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      testDict;
+}
+
+
+group
+(
+	shen
+	{
+		fullName	"Zhirong_Shen";
+		email	    "zrshen.sjtu@gmail.com";
+		ID  	    111;
+	}
+
+	liu
+	{
+		fullName	"Yuanchuan_Liu";
+		email	    "liuyuanchuan456@163.com";
+		ID		    121;
+	}
+
+	ye 
+	{
+		fullName	"Haixuan_Ye";
+		email	    "yehaixuan4428@163.com";
+		ID		    131;
+	}
+
+	yang
+	{
+		fullName	"Yongqian_Yang";
+		email	    "yongqian727@gmail.com";
+		ID		    141;
+	}
+
+);
