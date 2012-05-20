@@ -1,2 +1,3 @@
-wmake libso myLib
+wmake libso myLib/group
+wmake libso myLib/myLib
 wmake

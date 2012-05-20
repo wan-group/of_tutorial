@@ -1,5 +1,6 @@
 #include "fvCFD.H"
 #include "myLib.H"
+#include "group.H"
 #include "PtrList.H"
 #include "IOdictionary.H"
 

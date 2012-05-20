@@ -1,9 +1,11 @@
 EXE_INC = \
     -I$(LIB_SRC)/finiteVolume/lnInclude \
-    -I./myLib
+    -I./myLib/group \
+    -I./myLib/myLib
 
 EXE_LIBS = \
     -lfiniteVolume \
     -L$(FOAM_USER_LIBBIN) \
-    -lmyLib
+    -lmyLib \
+    -lgroup
 

@@ -1,22 +1,26 @@
-#ifdef GROUP_H // do not forget
+#ifndef GROUP_H // do not forget
 #define GROUP_H
 
 #include "myLib.H"
 #include "PtrList.H"
 #include "IOdictionary.H"
 #include "messageStream.H"
+#include "fvMesh.H"
+#include "Time.H"
 
+namespace Foam
+{
 class group
 {
     private:
         const fvMesh& mesh_;
-        const IOdictionary& dict_;
+        IOdictionary dict_;
         PtrList<myLib> group_;
 
     public:
 
         // construct from fvMesh
-        group(const fvMesh& mesh_);
+        group(const fvMesh& mesh);
 
         // display all group members' names
         void displayName();
@@ -27,11 +31,7 @@ class group
         // display all group members' emails
         void displayEmail();
 
+};
 }
-
-
-        
-
-
 
 #endif
