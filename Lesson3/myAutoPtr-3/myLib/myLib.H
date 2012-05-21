@@ -28,6 +28,8 @@ public:
 	// construct from dictionary
 	myLib(word name, dictionary dict);
 
+    myLib(const myLib& m1);
+
     ~myLib();
 
 	// inline function is better
@@ -107,11 +109,10 @@ public:
 		}
 	};
 
-	// required by PtrList, but does nothing here.
+	// create a clone and return autoPtr
 	autoPtr<myLib> clone() const
 	{
-		notImplemented("autoPtr<myLib> myLib::clone() const");
-		return autoPtr<myLib>(NULL);
+        return autoPtr<myLib>(new myLib(*this));
 	}
 
 };

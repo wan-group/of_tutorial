@@ -28,6 +28,13 @@ myLib::myLib(word name, dictionary dict)
 	email_(dict.lookup("email"))
 {}
 
+myLib::myLib(const myLib& m1)
+:
+    name_(m1.name_),
+    ID_(m1.ID_),
+    fullName_(m1.fullName_),
+    email_(m1.email_)
+{}
 
 myLib::~myLib()
 {
