@@ -1,3 +1,4 @@
-group.C
+group/group.C
+myLib/myLib.C
 
 LIB = $(FOAM_USER_LIBBIN)/libgroup
