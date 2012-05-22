@@ -1,3 +1,4 @@
+readOrNot   yes;
 name	"shen";
 score	80;
 direction   (90 30 60);
