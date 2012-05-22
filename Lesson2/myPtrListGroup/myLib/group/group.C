@@ -4,6 +4,7 @@ namespace Foam
 {
 group::group(const fvMesh& mesh)
 :
+    PtrList<myLib>(),
     mesh_(mesh),
     dict_
     (
@@ -16,35 +17,37 @@ group::group(const fvMesh& mesh)
               IOobject::NO_WRITE,
               true
          )
-    ),
-    group_
+    )
+{
+    PtrList<myLib> newGroup
     (
          dict_.lookup("group"),
          myLib::iNew()
-    )
-{}
+    );
+    transfer(newGroup);
+}
 
 void group::displayName()
 {
-    forAll(group_, i)
+    forAll(*this, i)
     {
-        Info << group_[i].name() << endl;
+        Info << (*this)[i].name() << endl;
     }
 }
 
 void group::displayID()
 {
-    forAll(group_, i)
+    forAll(*this, i)
     {
-        Info << group_[i].ID() << endl;
+        Info << (*this)[i].ID() << endl;
     }
 }
 
 void group::displayEmail()
 {
-    forAll(group_, i)
+    forAll(*this, i)
     {
-        Info << group_[i].email() << endl;
+        Info << (*this)[i].email() << endl;
     }
 }
 }
