@@ -11,12 +11,11 @@
 namespace Foam
 {
 class group
-:
-    public  PtrList<myLib>
 {
     private:
         const fvMesh& mesh_;
         IOdictionary dict_;
+        PtrList<myLib> group_;
 
     public:
 
