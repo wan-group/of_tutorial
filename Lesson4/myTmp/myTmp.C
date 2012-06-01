@@ -29,10 +29,13 @@ int main(int argc, char* argv[])
     // allocate memory for new object by using tmp
     tmp<myLib> p1(new myLib("by_tmp",1001));
 
+<<<<<<< HEAD
     // Note: tmp<Type> uses class refCount to count the number of references.
     // So, Type (here myLib) must be derived type of refCount so that Type can
     // use the member functions of refCount which is required by tmp<Type> template.
 
+=======
+>>>>>>> eae145017851255586f59561634c9ab135b65f48
     // p1 & p2 share the same object.
     // p2 just copy the pointer and reference from p1
     tmp<myLib> p2(p1);
