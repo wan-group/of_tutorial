@@ -1,0 +1,13 @@
+#!/bin/bash
+
+rm 0 -r
+
+cp 0.org 0 -r
+
+cp constant/polyMesh/blockMeshDict constant/
+
+rm constant/polyMesh/* -r
+
+cp constant/blockMeshDict constant/polyMesh/
+
+

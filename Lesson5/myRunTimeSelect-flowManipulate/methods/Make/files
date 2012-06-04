@@ -1,0 +1,5 @@
+method/method.C
+method1/method1.C
+method2/method2.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmyMethods

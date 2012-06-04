@@ -1,0 +1,23 @@
+// the header is required
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      testDict;
+}
+
+
+type	"method2";
+
+method1Coeffs
+{
+	r       0.5;
+}
+
+method2Coeffs
+{
+    a       0.8;
+    b       0.4;
+}
